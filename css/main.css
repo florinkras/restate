@@ -73,3 +73,28 @@ img {
 .navigation nav ul {
   display: flex;
 }
+
+/*SHOWCASE*/
+
+.showcase {
+  height: 600px;
+}
+
+.showcase .container {
+  border-radius: 15px;
+  background: linear-gradient(
+      to bottom,
+      rgba(17, 0, 163, 0.623),
+      rgba(85, 4, 95, 0.5)
+    ),
+    url("../images/showcase-bg.jpg") no-repeat center center/cover;
+}
+
+.showcase .flex {
+  justify-content: flex-start;
+}
+
+.showcase .container .showcase-text {
+  width: 35%;
+  color: #fff;
+}
