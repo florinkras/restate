@@ -13,15 +13,53 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/utilities.css" />
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/form.css" />
     <link rel="stylesheet" href="./css/media-queries.css" />
     <title>Login</title>
   </head>
   <body>
-    <h1 class="my-3 text-center">REstate</h1>
+    <!--Header Navigation-->
+    <div class="navigation py-1">
+      <div class="container flex align-center">
+        <h2><i class="fas fa-home"></i> restate</h2>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Properties</a></li>
+          </ul>
+        </nav>
+        <a href="login.html" class="btn btn-primary">Log in</a>
+        <div class="menu-btn">
+          <i class="fas fa-bars fa-2x"></i>
+        </div>
+      </div>
+    </div>
+
+    <!--Mobile Navigation-->
+    <div class="mobile-nav">
+      <div class="container">
+        <nav class="card">
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Properties</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 
     <div
-      class="container flex flex-column align-center card my-2 login-container"
+      class="
+        container
+        flex flex-column
+        align-center
+        justify-center
+        card
+        form-container
+      "
     >
       <div class="flex justify-center align-center bg-primary p-2 lock-icon">
         <i class="fas fa-lock"></i>

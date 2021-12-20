@@ -13,8 +13,9 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/utilities.css" />
+    <link rel="stylesheet" href="./css/form.css" />
     <link rel="stylesheet" href="./css/media-queries.css" />
-    <title>REstate</title>
+    <title>Register</title>
   </head>
   <body>
     <!--Header Navigation-->
@@ -50,44 +51,22 @@
       </div>
     </div>
 
-    <!--Showcase-->
-    <section class="showcase py-1">
-      <div class="container flex full-height align-center">
-        <div class="showcase-text">
-          <h1 class="md">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </h1>
-          <a href="signup.html" class="btn btn-primary">Sign Up</a>
-        </div>
+    <div
+      class="container flex flex-column align-center card my-2 form-container"
+    >
+      <div class="flex justify-center align-center bg-primary p-2 lock-icon">
+        <i class="fas fa-lock"></i>
       </div>
-    </section>
-
-    <!--About-->
-    <section class="about py-1">
-      <div class="container grid">
-        <div class="about-img">
-          <img src="/images/about-img.jpg" alt="" />
-        </div>
-        <div class="about-text">
-          <p class="leader text-primary">About</p>
-          <h2 class="md text-focused">We provide the best property for you!</h2>
-          <p class="lead">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-            accusamus?
-          </p>
-          <p class="lead">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-            accusamus?
-          </p>
-          <p class="lead">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-            accusamus?
-          </p>
-          <a href="#" class="btn btn-primary">Learn More</a>
-        </div>
-      </div>
-    </section>
-
-    <script src="./app.js" />
+      <h2>Sign up</h2>
+      <form class="flex flex-column align-center login-form" action="POST">
+        <input class="bg-light" type="text" placeholder="first name*" />
+        <input class="my-1 bg-light" type="text" placeholder="last name*" />
+        <input class="my-1 bg-light" type="email" placeholder="email*" />
+        <input class="my-1 bg-light" type="text" placeholder="username*" />
+        <input class="my-1 bg-light" type="password" placeholder="last name*" />
+        <button class="btn" type="submit">Sign up</button>
+      </form>
+    </div>
+    <script src="./app.js"></script>
   </body>
 </html>
