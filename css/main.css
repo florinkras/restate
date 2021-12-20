@@ -98,3 +98,19 @@ img {
   width: 35%;
   color: #fff;
 }
+
+/* About section*/
+.about .container {
+  padding: 0;
+}
+
+.about .grid {
+  justify-content: space-between;
+  grid-gap: 40px;
+}
+
+.about .container .about-img img {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
