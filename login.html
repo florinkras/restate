@@ -65,12 +65,22 @@
         <i class="fas fa-lock"></i>
       </div>
       <h2>Log In</h2>
-      <form class="flex flex-column align-center login-form" action="POST">
-        <input class="bg-light" type="text" placeholder="username" />
-        <input class="my-1 bg-light" type="password" placeholder="password" />
+      <form id="login" class="flex flex-column align-center login-form">
+        <input
+          id="username"
+          class="bg-light"
+          type="text"
+          placeholder="username"
+        />
+        <input
+          id="password"
+          class="my-1 bg-light"
+          type="password"
+          placeholder="password"
+        />
         <button class="btn" type="submit">Log In</button>
       </form>
     </div>
-    <script src="./app.js"></script>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>

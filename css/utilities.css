@@ -80,6 +80,10 @@
   color: #fff;
 }
 
+.bg-error {
+  background-color: var(--error-light);
+}
+
 /* INPUTS */
 input {
   width: 100%;
@@ -108,6 +112,10 @@ input {
   border-color: var(--primary-color);
 }
 
+.border-error {
+  border: 1px solid var(--error-color);
+}
+
 .border-bottom {
   border-bottom: 1px;
 }
@@ -127,6 +135,10 @@ input {
 
 .text-light {
   color: var(--light-color);
+}
+
+.text-error {
+  color: var(--error-color);
 }
 
 .text-focused {
@@ -157,8 +169,6 @@ input {
 .text-center {
   text-align: center;
 }
-
-/* text align */
 
 /* Display helpers*/
 
