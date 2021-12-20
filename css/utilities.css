@@ -1,8 +1,15 @@
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  overflow: auto;
   padding: 0 40px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
 }
 
 /* CARD */
@@ -73,6 +80,38 @@
   color: #fff;
 }
 
+/* INPUTS */
+input {
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  outline: none;
+  padding: 20px;
+  border: none;
+}
+
+/* BORDERS */
+
+.border-1 {
+  border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-3 {
+  border-width: 3px;
+}
+
+.border-primary {
+  border-color: var(--primary-color);
+}
+
+.border-bottom {
+  border-bottom: 1px;
+}
+
 /* Text colors */
 .text-primary {
   color: var(--primary-color);
@@ -119,13 +158,52 @@
   text-align: center;
 }
 
+/* text align */
+
 /* Display helpers*/
 
 .flex {
   display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.window-height {
+  height: 100vh;
+}
+
+.window-width {
+  width: 100vw;
+}
+
+.justify-center {
   justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.align-center {
   align-items: center;
-  height: 100%;
+}
+
+.align-space-between {
+  align-items: space-between;
+}
+
+.align-space-around {
+  align-items: space-around;
 }
 
 .grid {
