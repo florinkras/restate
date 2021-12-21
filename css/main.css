@@ -136,6 +136,19 @@ img {
   border-bottom-right-radius: 30px;
 }
 
+/*Card*/
+.properties .container{
+  padding: 0;
+}
+
+.properties .container .card{
+  margin: 0;
+}
+
+.properties .container .card img{
+  border-radius: 5px;
+}
+
 /*Footer*/
 
 .footer {
