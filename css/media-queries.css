@@ -31,10 +31,6 @@
     display: block;
   }
 
-  /* .showcase {
-    margin: 0 10px;
-  } */
-
   .showcase .flex {
     justify-content: center;
   }
@@ -47,6 +43,25 @@
 
   .showcase .container .showcase-text h1 {
     font-size: 24px;
+  }
+
+  .footer .flex {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer .container .footer-links {
+    margin-top: 1rem;
+  }
+
+  .footer ul {
+    margin-bottom: 15px;
+  }
+
+  .footer h3 {
+    padding-bottom: 5px;
   }
 }
 
