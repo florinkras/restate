@@ -137,16 +137,25 @@ img {
 }
 
 /*Card*/
-.properties .container{
+.properties .container {
   padding: 0;
 }
 
-.properties .container .card{
+.properties .container .card {
   margin: 0;
+  padding: 10px;
 }
 
-.properties .container .card img{
+.properties .container .card img {
   border-radius: 5px;
+}
+
+.properties .grid {
+  grid-gap: 50px;
+}
+
+.fa-bed {
+  margin-left: 10px;
 }
 
 /*Footer*/
