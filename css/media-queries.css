@@ -63,6 +63,11 @@
   .footer h3 {
     padding-bottom: 5px;
   }
+
+  .slideshow-container {
+    padding: 1rem;
+    height: 70vh;
+  }
 }
 
 /* Mobile */
