@@ -50,39 +50,23 @@
     </div>
 
     <!--Showcase-->
-    <section class="showcase py-1">
+    <section class="showcase py-1 bg-filter">
       <div class="container flex full-height align-center">
-        <div class="showcase-text">
-          <h1 class="md">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </h1>
-          <a href="signup.html" class="btn btn-primary">Sign Up</a>
-        </div>
-      </div>
-    </section>
-
-    <!--About-->
-    <section class="about py-1">
-      <div class="container grid">
-        <div class="about-img">
-          <img src="/images/about-img.jpg" alt="" />
-        </div>
-        <div class="about-text">
-          <p class="lead text-primary">About</p>
-          <h2 class="md text-focused">We provide the best property for you!</h2>
-          <p class="lead">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-            accusamus?
-          </p>
-          <p class="lead">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-            accusamus?
-          </p>
-          <p class="lead">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-            accusamus?
-          </p>
-          <a href="#" class="btn btn-primary">Learn More</a>
+        <div class="showcase-text filter-container card">
+          <h3 class="text-primary">Search for what you need</h3>
+          <form class="my-1">
+            <input class="bg-light my-1" type="text" placeholder="search" />
+            <select class="bg-light" name="filter" id="filter">
+              <option class="options" value="" disabled selected>
+                Select your option
+              </option>
+              <option class="options" value="buy">On Sale</option>
+              <option class="options" value="rent">On rent</option>
+            </select>
+          </form>
+          <button class="btn btn-primary">
+            <i class="fas fa-search"></i> Search
+          </button>
         </div>
       </div>
     </section>
@@ -90,7 +74,7 @@
     <!--Cards-->
     <section class="properties py-1">
       <div class="card-text text-center py-1">
-        <p class="lead text-primary">Recent</p>
+        <p class="lead text-primary">Results</p>
         <h1 class="text-focused">Our Featured Properties</h1>
         <p class="lead">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />Quas,

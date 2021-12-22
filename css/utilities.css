@@ -84,13 +84,19 @@
 }
 
 /* INPUTS */
-input {
+input,
+select {
   width: 100%;
   height: 40px;
   border-radius: 15px;
   outline: none;
   padding: 20px;
   border: none;
+}
+
+select {
+  padding: 0 20px;
+  color: #333;
 }
 
 /* BORDERS */
@@ -230,6 +236,10 @@ input {
 
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.relative {
+  position: relative;
 }
 
 /* Margin */
