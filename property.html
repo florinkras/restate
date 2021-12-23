@@ -53,15 +53,19 @@
     <!--Slider-->
     <section class="slideshow-container py-1">
       <div class="mySlides fade">
-        <img src="./images/properties/house-1.jpg" />
+        <img src="./images/property-1.jpg" />
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/properties/house-2.jpg" />
+        <img src="./images/property-2.jpg" />
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/properties/house-3.jpg" />
+        <img src="./images/property-4.jpg" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/property-5.jpg" />
       </div>
 
       <!-- Next and previous buttons -->
@@ -90,6 +94,52 @@
       </div>
     </div>
 
+    <!--Contact to buy form-->
+    <section class="buy-form">
+      <div class="container">
+        <p class="lead text-primary">Contact the seller</p>
+        <form action="#">
+          <div class="grid py-1">
+            <input
+              id="firstName"
+              class="bg-light"
+              type="text"
+              placeholder="First Name"
+            />
+            <input
+              id="lastName"
+              class="bg-light"
+              type="text"
+              placeholder="Last Name"
+            />
+          </div>
+          <div class="grid py-1">
+            <input
+              id="email"
+              class="bg-light"
+              type="email"
+              placeholder="Email"
+            />
+            <input
+              id="country"
+              class="bg-light"
+              type="text"
+              placeholder="Country"
+            />
+          </div>
+          <div class="py-1">
+            <textarea
+              placeholder="Type your message"
+              id="message"
+              name="message"
+              class="bg-light"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Contact</button>
+        </form>
+      </div>
+    </section>
+
     <!--Footer-->
     <footer class="footer bg-primary">
       <div class="container py-4 flex justify-space-between">
@@ -99,9 +149,9 @@
         <div class="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Properties</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/properties.html">Properties</a></li>
           </ul>
         </div>
         <div class="footer-locations">
