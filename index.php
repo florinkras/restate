@@ -18,17 +18,20 @@
   </head>
   <body>
     <!--Header Navigation-->
+    <?php 
+      echo "Hello world"
+    ?>
     <div class="navigation py-1">
       <div class="container flex align-center">
         <h2><i class="fas fa-home"></i> restate</h2>
         <nav>
           <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="properties.html">Properties</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="properties.php">Properties</a></li>
           </ul>
         </nav>
-        <a href="login.html" class="btn btn-primary">Log in</a>
+        <a href="loginphp" class="btn btn-primary">Log in</a>
         <div class="menu-btn">
           <i class="fas fa-bars fa-2x"></i>
         </div>
@@ -40,10 +43,10 @@
       <div class="container">
         <nav class="card">
           <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="properties.html">Properties</a></li>
-            <li><a href="/login.html" class="btn btn-primary">Log In</a></li>
+            <li><a href="indexphp">Home</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="properties.php">Properties</a></li>
+            <li><a href="login.php" class="btn btn-primary">Log In</a></li>
           </ul>
         </nav>
       </div>
@@ -56,7 +59,7 @@
           <h1 class="md">
             Lorem ipsum dolor sit amet consectetur adipisicing.
           </h1>
-          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+          <a href="signup.php" class="btn btn-primary">Sign Up</a>
         </div>
       </div>
     </section>
@@ -65,7 +68,7 @@
     <section class="about py-2">
       <div class="container grid">
         <div class="about-img">
-          <img src="/images/about-img.jpg" alt="" />
+          <img src="images/about-img.jpg" alt="" />
         </div>
         <div class="about-text">
           <p class="lead text-primary">About</p>
@@ -98,7 +101,7 @@
           </p>
         </div>
         <div class="grid grid-3">
-          <a href="property.html" class="card">
+          <a href="propertyphp" class="card">
             <img src="images/properties/house-2.jpg" alt="" />
             <p class="text-right">$100.000</p>
             <div class="flex justify-space-between align-items-center">
@@ -112,7 +115,7 @@
               </div>
             </div>
           </a>
-          <a href="property.html" class="card">
+          <a href="propertyphp" class="card">
             <img src="images/properties/house-3.jpg" alt="" />
             <p class="text-right">$100.000</p>
             <div class="flex justify-space-between align-items-center">
@@ -126,7 +129,7 @@
               </div>
             </div>
           </a>
-          <a href="property.html" class="card">
+          <a href="propertyphp" class="card">
             <img src="images/properties/house-4.jpg" alt="" />
             <p class="text-right">$100.000</p>
             <div class="flex justify-space-between align-items-center">
@@ -153,9 +156,9 @@
         <div class="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/services.html">Services</a></li>
-            <li><a href="/properties.html">Properties</a></li>
+            <li><a href="/indexphp">Home</a></li>
+            <li><a href="/servicesphp">Services</a></li>
+            <li><a href="/propertiesphp">Properties</a></li>
           </ul>
         </div>
         <div class="footer-locations">

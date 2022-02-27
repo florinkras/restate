@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/utilities.css" />
     <link rel="stylesheet" href="./css/form.css" />
     <link rel="stylesheet" href="./css/media-queries.css" />
-    <title>Register</title>
+    <title>Login</title>
   </head>
   <body>
     <!--Header Navigation-->
@@ -24,12 +24,12 @@
         <h2><i class="fas fa-home"></i> restate</h2>
         <nav>
           <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="properties.html">Properties</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="properties.php">Properties</a></li>
           </ul>
         </nav>
-        <a href="login.html" class="btn btn-primary">Log in</a>
+        <a href="loginphp" class="btn btn-primary">Log in</a>
         <div class="menu-btn">
           <i class="fas fa-bars fa-2x"></i>
         </div>
@@ -41,54 +41,43 @@
       <div class="container">
         <nav class="card">
           <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="properties.html">Properties</a></li>
-            <li><a href="/login.html" class="btn btn-primary">Log In</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="properties.php">Properties</a></li>
+            <li><a href="login.php" class="btn btn-primary">Log In</a></li>
           </ul>
         </nav>
       </div>
     </div>
 
     <div
-      class="container flex flex-column align-center card my-2 form-container"
+      class="
+        container
+        flex flex-column
+        align-center
+        justify-center
+        card
+        form-container
+      "
     >
       <div class="flex justify-center align-center bg-primary p-2 lock-icon">
         <i class="fas fa-lock"></i>
       </div>
-      <h2>Sign up</h2>
-      <form id="signup" class="flex flex-column align-center login-form">
-        <input
-          id="firstName"
-          class="bg-light"
-          type="text"
-          placeholder="first name*"
-        />
-        <input
-          id="lastName"
-          class="my-1 bg-light"
-          type="text"
-          placeholder="last name*"
-        />
-        <input
-          id="email"
-          class="my-1 bg-light"
-          type="email"
-          placeholder="email*"
-        />
+      <h2>Log In</h2>
+      <form id="login" class="flex flex-column align-center login-form">
         <input
           id="username"
-          class="my-1 bg-light"
+          class="bg-light"
           type="text"
-          placeholder="username*"
+          placeholder="username"
         />
         <input
           id="password"
           class="my-1 bg-light"
           type="password"
-          placeholder="password*"
+          placeholder="password"
         />
-        <button class="btn" type="submit">Sign up</button>
+        <button class="btn" type="submit">Log In</button>
       </form>
     </div>
     <script type="module" src="./app.js"></script>
