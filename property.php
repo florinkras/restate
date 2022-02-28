@@ -1,5 +1,16 @@
 <?php
 session_start();
+$id = $_GET['id'];
+
+if (!$id) {
+  header("location: ../index.php");
+}
+
+include "./classes/db.classes.php";
+include "./classes/property.classes.php";
+
+$propertyModel = new Property();
+$result = $propertyModel->getProperty($id);
 ?>
 
 <!DOCTYPE html>
@@ -86,25 +97,17 @@ session_start();
   </section>
 
   <!--Property info-->
-  <div class="property-info py-1">
-    <div class="container">
-      <h2 class="md text-primary">The Palace</h2>
-      <p class="lead">London, Uk</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-        provident praesentium at omnis nesciunt. Rem, consequatur eum labore
-        corporis voluptates nesciunt placeat a, minima suscipit molestias,
-        tempore magni voluptatibus. Magni fugiat quibusdam enim esse vero nisi
-        vitae impedit pariatur accusamus. Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Mollitia eius repellendus tempora rerum
-        reiciendis perferendis. Porro, nisi delectus! Esse, mollitia ut,
-        accusantium amet expedita dolorum quisquam pariatur est veniam
-        repellat a quos! Officia laudantium deserunt consectetur eligendi
-        accusantium rerum, consequatur omnis possimus cum doloremque
-        exercitationem quis tempora aspernatur! Commodi, itaque.
-      </p>
-    </div>
-  </div>
+  <?php
+  echo ' <div class="property-info py-1">
+      <div class="container">
+        <h2 class="md text-primary">' . $result['title'] . '</h2>
+        <p class="lead">' .  $result['location']  . '</p>
+        <p>
+        ' .  $result['description']  . '
+        </p>
+      </div>
+    </div>';
+  ?>
 
   <!--Contact to buy form-->
   <section class="buy-form">

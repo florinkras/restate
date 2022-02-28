@@ -22,4 +22,14 @@ class Property extends Db
         $stmt = null;
         return $property;
     }
+
+    public function getProperty($id)
+    {
+        $sql = 'SELECT * from property WHERE ID = ' . $id;
+        $stmt = $this->connect();
+
+        $property = $stmt->query($sql);
+        $result = $property->fetch();
+        return $result;
+    }
 }
