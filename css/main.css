@@ -154,11 +154,35 @@ img {
   grid-gap: 50px;
 }
 
+.services .container .servicesCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 40px;
+}
+
+.services .container .servicesCards .serviceCard {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.services .container .servicesCards .serviceCard .content {
+  height: 100%;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.services .container .servicesCards .serviceCard .content .img-wrapper {
+  max-width: 250px;
+}
+
 .fa-sink {
   margin-left: 10px;
 }
-
-/*Footer*/
 
 .footer {
   margin-top: 2rem;

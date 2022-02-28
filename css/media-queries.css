@@ -68,6 +68,10 @@
     padding: 1rem;
     height: 70vh;
   }
+
+  .services .container .servicesCards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Mobile */

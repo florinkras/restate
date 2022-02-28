@@ -72,52 +72,42 @@ session_start();
   </div>
 
 
-  <section class="services py-2">
+  <section class="services">
     <div class="container">
-      <h2 class="md text-center">
-        Whether you’re buying, selling or renting, we can help you move
-        forward.
-      </h2>
-      <div class="py-1 grid grid-3">
-        <div class="card">
-          <img src="./images/services/service-1.svg" alt="" />
-          <h2 class="md text-center text-secondary">Buy A Home</h2>
-          <p class="lead text-center">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur explicabo ab eveniet?
-          </p>
-          <div class="text-center">
-            <a href="#" class="btn btn-secondary">Find More</a>
+      <div class="md text-center">
+        <h2 class="md text-center">
+          Whether you’re buying, selling or renting, we can help you move
+          forward.
+        </h2>
+      </div>
+
+      <div class="py-2 servicesCards">
+        <?php
+        include "./classes/db.classes.php";
+        include "./repository/service.repository.php";
+
+        $serviceRepo = new ServiceRepository();
+        $result = $serviceRepo->getAllServices();
+
+        foreach ($result as $row) {
+          echo  '<div class="serviceCard">
+          <div class="content">
+            <div class="img-wrapper">
+              <img src="data:image/png;base64,' . base64_encode($row['image']) . '" alt="" />
+            </div>
+            
+            <h2 class="text-primary text-center">' . $row['title'] . '</h2>
+            <p>' . $row['description'] . '</p>
           </div>
-        </div>
-        <div class="card">
-          <img src="./images/services/service-2.svg" alt="" />
-          <h2 class="md text-center text-secondary">Sell A Home</h2>
-          <p class="lead text-center">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur explicabo ab eveniet?
-          </p>
-          <div class="text-center">
-            <a href="#" class="btn btn-secondary">Find More</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./images/services/service-3.svg" alt="" />
-          <h2 class="md text-center text-secondary">Rent A Home</h2>
-          <p class="lead text-center">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur explicabo ab eveniet?
-          </p>
-          <div class="text-center">
-            <a href="#" class="btn btn-secondary">Find More</a>
-          </div>
-        </div>
+        </div>';
+        }
+        ?>
       </div>
     </div>
   </section>
 
   <!--Footer-->
-  <footer class="footer bg-primary">
+  <footer class=" footer bg-primary">
     <div class="container py-4 flex justify-space-between">
       <div class="footer-logo">
         <h2 class="md">restate</h2>
