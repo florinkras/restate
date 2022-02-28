@@ -72,16 +72,20 @@ session_start();
   </div>
 
   <!--Showcase-->
-  <section class="showcase py-1">
-    <div class="container flex full-height align-center">
-      <div class="showcase-text">
-        <h1 class="md">
-          Lorem ipsum dolor sit amet consectetur adipisicing.
-        </h1>
-        <a href="signup.php" class="btn btn-primary">Sign Up</a>
+  <?php
+  if (!$_SESSION || !$_SESSION['id']) {
+    echo '<section class="showcase py-1">
+      <div class="container flex full-height align-center">
+        <div class="showcase-text">
+          <h1 class="md">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </h1>
+          <a href="signup.php" class="btn btn-primary">Sign Up</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>';
+  }
+  ?>
 
   <!--About-->
   <section class="about py-2">

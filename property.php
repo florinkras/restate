@@ -3,7 +3,7 @@ session_start();
 $id = $_GET['id'];
 
 if (!$id) {
-  header("location: ../index.php");
+  header("location: ./index.php");
 }
 
 include "./classes/db.classes.php";

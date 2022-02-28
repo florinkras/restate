@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if ($_SESSION && $_SESSION['id']) {
+  header("location: ./index.php");
+}
 ?>
 
 <!DOCTYPE html>
