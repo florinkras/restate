@@ -121,7 +121,7 @@ session_start();
         foreach ($result as $row) {
           echo '<a href="property.php?id=' . $row['ID'] . '" class="card">
           <img src="data:image/png;base64,' . base64_encode($row['image']) . '" alt="" />
-          <p class="text-right">' . $row['price'] . '</p>
+          <p class="text-right">$' . $row['price'] . '</p>
           <div class="flex justify-space-between align-items-center">
             <div class="card-title">
               <h4>' . $row['title'] . '</h4>
