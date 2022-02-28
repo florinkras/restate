@@ -19,7 +19,6 @@ window.addEventListener("resize", () => {
 //validation
 if (form) {
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
     let error, errorMessages;
 
     if (form.id === "login") {
@@ -37,6 +36,7 @@ if (form) {
     }
 
     if (error) {
+      e.preventDefault();
       const previousErrorsContainer =
         document.querySelector("#error-container");
 
@@ -60,6 +60,8 @@ if (form) {
 
       return;
     }
+
+    form.submit();
 
     form.removeChild(document.querySelector("#error-container"));
   });
