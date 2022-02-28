@@ -34,6 +34,7 @@ class Login extends Db
 
       $_SESSION["id"] = $user[0]["id"];
       $_SESSION["username"] = $user[0]["username"];
+      $_SESSION["role"] = $user[0]["role"];
     }
 
     $stmt = null;

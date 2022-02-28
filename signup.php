@@ -26,6 +26,11 @@ session_start();
           <li><a href="index.php">Home</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="properties.php">Properties</a></li>
+          <?php
+          if ($_SESSION && $_SESSION['id'] && $_SESSION['role']) {
+            echo '<li><a href="dashboard.php">Dashboard</a></li>';
+          }
+          ?>
         </ul>
       </nav>
       <?php
@@ -49,6 +54,11 @@ session_start();
           <li><a href="indexphp">Home</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="properties.php">Properties</a></li>
+          <?php
+          if ($_SESSION && $_SESSION['id'] && $_SESSION['role']) {
+            echo '<li><a href="dashboard.php">Dashboard</a></li>';
+          }
+          ?>
           <?php
           if ($_SESSION && $_SESSION["id"]) {
             echo '<li><a href="includes/logout.inc.php" class="btn btn-primary">Log Out</a></li>';
