@@ -1,9 +1,6 @@
 <?php
 
 if (isset($_POST["submit"])) {
-
-  echo "DKWJhdwqjkdq";
-
   $username = $_POST["username"];
   $password = $_POST["password"];
 
