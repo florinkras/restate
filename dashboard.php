@@ -17,6 +17,7 @@ if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/utilities.css" />
+    <link rel="stylesheet" href="./css/form.css" />
     <link rel="stylesheet" href="./css/media-queries.css" />
     <title>REstate</title>
 </head>
@@ -77,11 +78,20 @@ if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
     </div>
 
     <!--Showcase-->
-    <section class="py-1">
-        <div class="container flex full-height align-center">
-            <h1>dashboard</h1>
+    <div class="container flex flex-column align-center card my-2 form-container">
+        <div class="flex justify-center align-center bg-primary p-2 lock-icon">
+            <i class="fas fa-lock"></i>
         </div>
-    </section>
+        <h2>Create Admin</h2>
+        <form name="createAdmin" action="includes/signup.inc.php" method="post" id="signup" class="flex flex-column align-center login-form">
+            <input id="firstName" name="firstName" class="bg-light" type="text" placeholder="first name*" />
+            <input id="lastName" name="lastName" class="my-1 bg-light" type="text" placeholder="last name*" />
+            <input id="email" name="email" class="my-1 bg-light" type="email" placeholder="email*" />
+            <input id="username" name="username" class="my-1 bg-light" type="text" placeholder="username*" />
+            <input id="password" name="password" class="my-1 bg-light" type="password" placeholder="password*" />
+            <button class="btn" type="submit" name="createAdmin">Sign up</button>
+        </form>
+    </div>
 
 
     <!--Footer-->

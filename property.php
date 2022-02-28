@@ -11,6 +11,9 @@ include "./classes/property.classes.php";
 
 $propertyModel = new Property();
 $result = $propertyModel->getProperty($id);
+if (!$result) {
+  header("location: ./index.php");
+}
 ?>
 
 <!DOCTYPE html>

@@ -3,14 +3,14 @@
 class Singup extends Db
 {
 
-  protected function setUser($firstName, $lastName, $email, $username, $password)
+  protected function setUser($firstName, $lastName, $email, $username, $password, $role)
   {
-    $sql = 'INSERT INTO users (firstName, lastName, email, username, password) VALUES (?, ?, ?, ?, ?);';
+    $sql = 'INSERT INTO users (firstName, lastName, email, username, password, role) VALUES (?, ?, ?, ?, ?, ?);';
     $stmt = $this->connect()->prepare($sql);
 
     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
-    if (!$stmt->execute(array($firstName, $lastName, $email, $username, $hashedPwd))) {
+    if (!$stmt->execute(array($firstName, $lastName, $email, $username, $hashedPwd, $role))) {
       $stmt = null;
       header("location: ../index.php?error=stmtfailed");
     }

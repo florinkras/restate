@@ -77,7 +77,7 @@ if ($_SESSION && $_SESSION['id']) {
       <i class="fas fa-lock"></i>
     </div>
     <h2>Log In</h2>
-    <form action="includes/login.inc.php" method="post" id="login" class="flex flex-column align-center login-form">
+    <form name="submit" action="includes/login.inc.php" method="post" id="login" class="flex flex-column align-center login-form">
       <input id="username" name="username" class="bg-light" type="text" placeholder="username" />
       <input id="password" name="password" class="my-1 bg-light" type="password" placeholder="password" />
       <button class="btn" type="submit" name="submit">Log In</button>

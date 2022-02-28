@@ -80,13 +80,13 @@ if ($_SESSION && $_SESSION['id']) {
       <i class="fas fa-lock"></i>
     </div>
     <h2>Sign up</h2>
-    <form action="includes/signup.inc.php" method="post" id="signup" class="flex flex-column align-center login-form">
+    <form name="signup" action="includes/signup.inc.php" method="post" id="signup" class="flex flex-column align-center login-form">
       <input id="firstName" name="firstName" class="bg-light" type="text" placeholder="first name*" />
       <input id="lastName" name="lastName" class="my-1 bg-light" type="text" placeholder="last name*" />
       <input id="email" name="email" class="my-1 bg-light" type="email" placeholder="email*" />
       <input id="username" name="username" class="my-1 bg-light" type="text" placeholder="username*" />
       <input id="password" name="password" class="my-1 bg-light" type="password" placeholder="password*" />
-      <button class="btn" type="submit" name="submit">Sign up</button>
+      <button class="btn" type="submit" name="signup">Sign up</button>
     </form>
   </div>
   <script type="module" src="./app.js"></script>

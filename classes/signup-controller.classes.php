@@ -7,15 +7,17 @@ class SignupController extends Singup
   private $email;
   private $username;
   private $password;
+  private $role;
 
 
-  public function __construct($firstName, $lastName, $email, $username, $password)
+  public function __construct($firstName, $lastName, $email, $username, $password, $role)
   {
     $this->firstName = $firstName;
     $this->lastName = $lastName;
     $this->email = $email;
     $this->username = $username;
     $this->password = $password;
+    $this->role = $role;
   }
 
   public function signupUser()
@@ -33,7 +35,7 @@ class SignupController extends Singup
       exit();
     }
 
-    $this->setUser($this->firstName, $this->lastName, $this->email, $this->username,  $this->password);
+    $this->setUser($this->firstName, $this->lastName, $this->email, $this->username,  $this->password, $this->role);
   }
 
   private function emptyInput()

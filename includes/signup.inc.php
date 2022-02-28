@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST["submit"])) {
+if (isset($_POST)) {
 
   $firstName = $_POST["firstName"];
   $lastName = $_POST["lastName"];
@@ -13,7 +13,11 @@ if (isset($_POST["submit"])) {
   include "../classes/signup-controller.classes.php";
 
 
-  $signup = new SignupController($firstName, $lastName, $email, $username, $password);
+  if (isset($_POST['signup'])) {
+    $signup = new SignupController($firstName, $lastName, $email, $username, $password, 0);
+  } else if (isset($_POST['createAdmin'])) {
+    $signup = new SignupController($firstName, $lastName, $email, $username, $password, 1);
+  }
 
   $signup->signupUser();
 
