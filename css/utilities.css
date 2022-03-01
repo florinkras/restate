@@ -94,6 +94,10 @@ select {
   border: none;
 }
 
+input[type="file"] {
+  padding-bottom: 40px;
+}
+
 select {
   padding: 0 20px;
   color: #333;

@@ -50,7 +50,7 @@ if ($_SESSION && $_SESSION['id']) {
     <div class="container">
       <nav class="card">
         <ul class="menu">
-          <li><a href="indexphp">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="properties.php">Properties</a></li>
           <?php

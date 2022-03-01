@@ -65,7 +65,7 @@ if (!$result) {
     <div class="container">
       <nav class="card">
         <ul class="menu">
-          <li><a href="indexphp">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="properties.php">Properties</a></li>
           <?php
@@ -152,7 +152,7 @@ if (!$result) {
       <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="/indexphp">Home</a></li>
+          <li><a href="/index.php">Home</a></li>
           <li><a href="/servicesphp">Services</a></li>
           <li><a href="/propertiesphp">Properties</a></li>
         </ul>
@@ -189,7 +189,7 @@ if (!$result) {
       </div>
     </div>
     <div class="copyright text-center">
-      <p>All rights reserved &copy; restate 2021</p>
+      <p class="copyright-year"></p>
     </div>
   </footer>
 

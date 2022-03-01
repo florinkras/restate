@@ -1,5 +1,5 @@
 <?php
-class ServiceRepository extends Db
+class Service extends Db
 {
 
   public function getAllServices()

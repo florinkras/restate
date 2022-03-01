@@ -5,6 +5,10 @@ import validateCreateProperty from "./js/validateCreateProperty.js";
 let menuBtn = document.querySelector(".menu-btn");
 let mobileMenu = document.querySelector(".mobile-nav");
 
+let year = new Date().getFullYear();
+let footerCopyright = document.querySelector(".copyright-year");
+footerCopyright.innerHTML = `All rights reserved &copy; restate ${year}`;
+
 const form = document.querySelectorAll("form");
 
 menuBtn.addEventListener("click", () => {
