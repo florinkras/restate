@@ -3,12 +3,12 @@
 class Property extends Db
 
 {
-    public function setProperty($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image)
+    public function setProperty($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image, $created_by)
     {
-        $sql = 'INSERT INTO property (title, location, description, price, bathroomsCount, bedroomsCount, image) VALUES (?, ?, ?, ?, ?, ?, ?);';
+        $sql = 'INSERT INTO property (title, location, description, price, bathroomsCount, bedroomsCount, image, created_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?);';
         $stmt = $this->connect()->prepare($sql);
 
-        if (!$stmt->execute(array($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image))) {
+        if (!$stmt->execute(array($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image, $created_by))) {
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
         }
