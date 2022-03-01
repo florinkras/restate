@@ -94,6 +94,19 @@ select {
   border: none;
 }
 
+input[type="file"] {
+  padding-bottom: 40px;
+}
+
+.checkbox {
+  /* vertical-align: middle; */
+  display: inline;
+}
+
+.checkbox {
+  margin-bottom: 1rem;
+}
+
 select {
   padding: 0 20px;
   color: #333;

@@ -66,7 +66,7 @@ if (!$result) {
     <div class="container">
       <nav class="card">
         <ul class="menu">
-          <li><a href="indexphp">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="properties.php">Properties</a></li>
           <?php
@@ -126,20 +126,23 @@ if (!$result) {
   <!--Contact to buy form-->
   <section class="buy-form my-2">
     <div class="container">
-      <p class="lead text-primary">Contact the seller</p>
-      <form action="#">
+      <form action="includes/contactSeller.inc.php" method="post" name="contactSeller" id="contactSeller">
+        <p class="lead text-primary">Contact the seller</p>
+        <?php
+        echo '<input type="hidden" name="propertyId" value=' . $_GET['id'] . '>'
+        ?>
         <div class="grid py-1">
-          <input id="firstName" class="bg-light" type="text" placeholder="First Name" />
-          <input id="lastName" class="bg-light" type="text" placeholder="Last Name" />
+          <input id="firstName" name="firstName" class="bg-light" type="text" placeholder="First Name" />
+          <input id="lastName" name="lastName" class="bg-light" type="text" placeholder="Last Name" />
         </div>
         <div class="grid py-1">
-          <input id="email" class="bg-light" type="email" placeholder="Email" />
-          <input id="country" class="bg-light" type="text" placeholder="Country" />
+          <input id="email" name="email" class="bg-light" type="email" placeholder="Email" />
+          <input id="country" name="country" class="bg-light" type="text" placeholder="Country" />
         </div>
         <div class="py-1">
           <textarea placeholder="Type your message" id="message" name="message" class="bg-light"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Contact</button>
+        <button type="submit" name="contactSeller" class="btn btn-primary">Contact</button>
       </form>
     </div>
   </section>
@@ -188,7 +191,7 @@ if (!$result) {
       <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="/indexphp">Home</a></li>
+          <li><a href="/index.php">Home</a></li>
           <li><a href="/servicesphp">Services</a></li>
           <li><a href="/propertiesphp">Properties</a></li>
         </ul>
@@ -225,7 +228,7 @@ if (!$result) {
       </div>
     </div>
     <div class="copyright text-center">
-      <p>All rights reserved &copy; restate 2021</p>
+      <p class="copyright-year"></p>
     </div>
   </footer>
 

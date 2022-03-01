@@ -51,7 +51,7 @@ session_start();
     <div class="container">
       <nav class="card">
         <ul class="menu">
-          <li><a href="indexphp">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="properties.php">Properties</a></li>
           <?php
@@ -84,9 +84,9 @@ session_start();
       <div class="py-2 servicesCards">
         <?php
         include "./classes/db.classes.php";
-        include "./repository/service.repository.php";
+        include "./classes/services.classes.php";
 
-        $serviceRepo = new ServiceRepository();
+        $serviceRepo = new Service();
         $result = $serviceRepo->getAllServices();
 
         foreach ($result as $row) {
@@ -115,7 +115,7 @@ session_start();
       <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="/indexphp">Home</a></li>
+          <li><a href="/index.php">Home</a></li>
           <li><a href="/servicesphp">Services</a></li>
           <li><a href="/propertiesphp">Properties</a></li>
         </ul>
@@ -152,7 +152,7 @@ session_start();
       </div>
     </div>
     <div class="copyright text-center">
-      <p>All rights reserved &copy; restate 2021</p>
+      <p class="copyright-year"></p>
     </div>
   </footer>
 

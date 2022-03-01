@@ -50,7 +50,7 @@ session_start();
     <div class="container">
       <nav class="card">
         <ul class="menu">
-          <li><a href="indexphp">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="properties.php">Properties</a></li>
           <?php
@@ -76,25 +76,21 @@ session_start();
     <div class="container flex full-height align-center">
       <div class="showcase-text filter-container card">
         <h3 class="text-primary">Search for what you need</h3>
-        <form class="my-1">
-          <input class="bg-light my-1" type="text" placeholder="search" />
-          <select class="bg-light" name="filter" id="filter">
-            <option class="options" value="" disabled selected>
-              Select your option
-            </option>
-            <option class="options" value="buy">On Sale</option>
-            <option class="options" value="rent">On rent</option>
-          </select>
+        <form class="my-1" id="searchForm" name="searchForm" action="properties.php" method="get">
+          <input class="bg-light my-1" type="text" placeholder="search" name="search" />
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>Search
+          </button>
         </form>
-        <button class="btn btn-primary">
-          <i class="fas fa-search"></i> Search
-        </button>
+
       </div>
     </div>
   </section>
 
   <!--Cards-->
   <section class="properties py-1">
+
+
     <div class="container">
       <div class="card-text text-center py-1">
         <p class="lead text-primary">Properties</p>
@@ -104,90 +100,37 @@ session_start();
         </p>
       </div>
       <div class="grid grid-3">
-        <a class="card" href="property.php">
-          <img src="images/properties/house-1.jpg" alt="" />
-          <p class="text-right">$100.000</p>
+        <?php
+        include "./classes/db.classes.php";
+        include "./classes/property.classes.php";
+
+        $search = isset($_GET['search']) ? $_GET['search'] : '';
+
+        $propertyModel = new Property();
+
+        if ($search) {
+          $result = $propertyModel->getPropertiesByName();
+        } else {
+          $result = $propertyModel->getAllProperties();
+        }
+
+        foreach ($result as $row) {
+          echo '<a href="property.php?id=' . $row['ID'] . '" class="card">
+          <img src="data:image/png;base64,' . base64_encode($row['image']) . '" alt="" />
+          <p class="text-right">$' . $row['price'] . '</p>
           <div class="flex justify-space-between align-items-center">
             <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>London, UK</h6>
+              <h4>' . $row['title'] . '</h4>
+              <h6>' . $row['location'] . '</h6>
             </div>
             <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
+              <p><i class="fas fa-bed"></i> ' . $row['bedroomsCount'] . '</p>
+              <p><i class="fas fa-sink"></i> ' . $row['bathroomsCount'] . '</p>
             </div>
           </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-2.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>Toronto, CA</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-3.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>London, UK</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-4.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>New York, US</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-5.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>London, UK</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-6.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>London, UK</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
+        </a>';
+        }
+        ?>
       </div>
     </div>
   </section>
@@ -201,7 +144,7 @@ session_start();
       <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="/indexphp">Home</a></li>
+          <li><a href="/index.php">Home</a></li>
           <li><a href="/servicesphp">Services</a></li>
           <li><a href="/propertiesphp">Properties</a></li>
         </ul>
@@ -238,7 +181,7 @@ session_start();
       </div>
     </div>
     <div class="copyright text-center">
-      <p>All rights reserved &copy; restate 2021</p>
+      <p class="copyright-year"></p>
     </div>
   </footer>
   <script type="module" src="./app.js"></script>

@@ -57,7 +57,7 @@ if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
         <div class="container">
             <nav class="card">
                 <ul class="menu">
-                    <li><a href="indexphp">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="services.php">Services</a></li>
                     <li><a href="properties.php">Properties</a></li>
                     <?php
@@ -159,7 +159,7 @@ if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
             </div>
         </div>
         <div class="copyright text-center">
-            <p>All rights reserved &copy; restate 2021</p>
+            <p class="copyright-year"></p>
         </div>
     </footer>
 

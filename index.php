@@ -51,7 +51,7 @@ session_start();
     <div class="container">
       <nav class="card">
         <ul class="menu">
-          <li><a href="indexphp">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="properties.php">Properties</a></li>
           <?php
@@ -72,20 +72,20 @@ session_start();
   </div>
 
   <!--Showcase-->
-  <?php
-  if (!$_SESSION || !$_SESSION['id']) {
-    echo '<section class="showcase py-1">
-      <div class="container flex full-height align-center">
-        <div class="showcase-text">
-          <h1 class="md">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </h1>
-          <a href="signup.php" class="btn btn-primary">Sign Up</a>
-        </div>
+  <section class="showcase py-1">
+    <div class="container flex full-height align-center">
+      <div class="showcase-text">
+        <h1 class="md">
+          Restate provides you with the best deals on your favorite properties
+        </h1>
+        <?php
+        if (!$_SESSION || !$_SESSION['id']) {
+          echo '<a href="signup.php" class="btn btn-primary">Sign Up</a>';
+        }
+        ?>
       </div>
-    </section>';
-  }
-  ?>
+    </div>
+  </section>
 
   <!--About-->
   <section class="about py-2">
@@ -97,16 +97,13 @@ session_start();
         <p class="lead text-primary">About</p>
         <h2 class="md text-focused">We provide the best property for you!</h2>
         <p class="lead">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-          accusamus?
+          Find your palce with our local lifestyle, demographics and market info.
         </p>
         <p class="lead">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-          accusamus?
+          We'll help you find the right home loan at a great rate.
         </p>
         <p class="lead">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
-          accusamus?
+          Track the estimated value of your home and stay in touch with your local market.
         </p>
       </div>
     </div>
@@ -120,8 +117,7 @@ session_start();
         <p class="lead text-primary">Recent</p>
         <h1 class="text-focused">Our Featured Properties</h1>
         <p class="lead">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          <br />Quas, necessitatibus?
+          Restate provides you with the best deals on <br />your favorite properties
         </p>
       </div>
       <div class="grid grid-3">
@@ -199,7 +195,7 @@ session_start();
       </div>
     </div>
     <div class="copyright text-center">
-      <p>All rights reserved &copy; restate 2021</p>
+      <p class="copyright-year"></p>
     </div>
   </footer>
 
