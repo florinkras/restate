@@ -79,6 +79,9 @@ if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
 
     <div class="container flex flex-column align-center my-2 form-container">
         <h1>Dashboard</h1>
+        <?php
+        echo '<h3>Welcome, ' . $_SESSION['username'] . '  </h3>'
+        ?>
     </div>
 
     <div class="container flex flex-column align-center card my-2 form-container">
