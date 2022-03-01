@@ -76,19 +76,13 @@ session_start();
     <div class="container flex full-height align-center">
       <div class="showcase-text filter-container card">
         <h3 class="text-primary">Search for what you need</h3>
-        <form class="my-1">
-          <input class="bg-light my-1" type="text" placeholder="search" />
-          <select class="bg-light" name="filter" id="filter">
-            <option class="options" value="" disabled selected>
-              Select your option
-            </option>
-            <option class="options" value="buy">On Sale</option>
-            <option class="options" value="rent">On rent</option>
-          </select>
+        <form class="my-1" id="searchForm" name="searchForm" action="properties.php" method="get">
+          <input class="bg-light my-1" type="text" placeholder="search" name="search" />
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>Search
+          </button>
         </form>
-        <button class="btn btn-primary">
-          <i class="fas fa-search"></i> Search
-        </button>
+
       </div>
     </div>
   </section>
@@ -110,8 +104,15 @@ session_start();
         include "./classes/db.classes.php";
         include "./classes/property.classes.php";
 
+        $search = isset($_GET['search']) ? $_GET['search'] : '';
+
         $propertyModel = new Property();
-        $result = $propertyModel->getAllProperties();
+
+        if ($search) {
+          $result = $propertyModel->getPropertiesByName();
+        } else {
+          $result = $propertyModel->getAllProperties();
+        }
 
         foreach ($result as $row) {
           echo '<a href="property.php?id=' . $row['ID'] . '" class="card">

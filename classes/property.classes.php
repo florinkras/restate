@@ -26,6 +26,18 @@ class Property extends Db
         return $property;
     }
 
+
+    public function getPropertiesByName()
+    {
+        $title = isset($_GET['search']) ? $_GET['search'] : '';
+        $sql = "SELECT * from property WHERE title = '$title' ";
+        $stmt = $this->connect();
+
+        $property = $stmt->query($sql);
+        $stmt = null;
+        return $property;
+    }
+
     public function getFeaturedProperties()
     {
         $sql = 'SELECT * from property WHERE is_featured = 1';
