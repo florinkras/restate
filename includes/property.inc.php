@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
+    header("location: ../index.php?error=notAuthorized");
+    return exit();
+}
 
 if (isset($_POST["createProperty"])) {
     $title = $_POST["title"];
@@ -14,7 +20,7 @@ if (isset($_POST["createProperty"])) {
     include "../classes/property-controller.classes.php";
 
 
-    $login = new PropertyController($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image);
+    $login = new PropertyController($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image, $_SESSION['id']);
 
     $login->createProperty();
 

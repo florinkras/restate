@@ -9,9 +9,10 @@ class PropertyController extends Property
     private $bathroomsCount;
     private $bedroomsCount;
     private $image;
+    private $created_by;
 
 
-    public function __construct($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image)
+    public function __construct($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image, $created_by)
     {
         $this->title = $title;
         $this->location = $location;
@@ -20,6 +21,7 @@ class PropertyController extends Property
         $this->bathroomsCount = $bathroomsCount;
         $this->bedroomsCount = $bedroomsCount;
         $this->image = $image;
+        $this->created_by = $created_by;
     }
 
     public function createProperty()
@@ -29,14 +31,14 @@ class PropertyController extends Property
             exit();
         }
 
-        $this->setProperty($this->title, $this->location, $this->description, $this->price,  $this->bathroomsCount, $this->bedroomsCount, $this->image);
+        $this->setProperty($this->title, $this->location, $this->description, $this->price,  $this->bathroomsCount, $this->bedroomsCount, $this->image, $this->created_by);
     }
 
     private function emptyInput()
     {
         $result = false;
 
-        if (empty($this->title) || empty($this->location) || empty($this->description) || empty($this->price) ||  empty($this->bathroomsCount) || empty($this->bedroomsCount) || empty($this->image)) {
+        if (empty($this->title) || empty($this->location) || empty($this->description) || empty($this->price) ||  empty($this->bathroomsCount) || empty($this->bedroomsCount) || empty($this->image) || empty($this->created_by)) {
             $result = false;
         } else {
             $result = true;
