@@ -125,20 +125,23 @@ if (!$result) {
   <!--Contact to buy form-->
   <section class="buy-form">
     <div class="container">
-      <p class="lead text-primary">Contact the seller</p>
-      <form action="#">
+      <form action="includes/contactSeller.inc.php" method="post" name="contactSeller" id="contactSeller">
+        <p class="lead text-primary">Contact the seller</p>
+        <?php
+        echo '<input type="hidden" name="propertyId" value=' . $_GET['id'] . '>'
+        ?>
         <div class="grid py-1">
-          <input id="firstName" class="bg-light" type="text" placeholder="First Name" />
-          <input id="lastName" class="bg-light" type="text" placeholder="Last Name" />
+          <input id="firstName" name="firstName" class="bg-light" type="text" placeholder="First Name" />
+          <input id="lastName" name="lastName" class="bg-light" type="text" placeholder="Last Name" />
         </div>
         <div class="grid py-1">
-          <input id="email" class="bg-light" type="email" placeholder="Email" />
-          <input id="country" class="bg-light" type="text" placeholder="Country" />
+          <input id="email" name="email" class="bg-light" type="email" placeholder="Email" />
+          <input id="country" name="country" class="bg-light" type="text" placeholder="Country" />
         </div>
         <div class="py-1">
           <textarea placeholder="Type your message" id="message" name="message" class="bg-light"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Contact</button>
+        <button type="submit" name="contactSeller" class="btn btn-primary">Contact</button>
       </form>
     </div>
   </section>

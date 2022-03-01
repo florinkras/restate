@@ -1,6 +1,7 @@
 import validateLogin from "./js/validateLogin.js";
 import validateSignup from "./js/validateSignup.js";
 import validateCreateProperty from "./js/validateCreateProperty.js";
+import validateContactSeller from "./js/validateContactSeller.js";
 
 let menuBtn = document.querySelector(".menu-btn");
 let mobileMenu = document.querySelector(".mobile-nav");
@@ -54,6 +55,15 @@ if (form) {
         } = validateCreateProperty();
         error = createPropertyError;
         errorMessages = createPropertyMessages;
+      }
+
+      if (item.id === "contactSeller") {
+        const {
+          error: contactSellerError,
+          errorMessages: contactSellerMessages,
+        } = validateContactSeller();
+        error = contactSellerError;
+        errorMessages = contactSellerMessages;
       }
 
       if (error) {
