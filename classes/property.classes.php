@@ -28,7 +28,7 @@ class Property extends Db
 
     public function getFeaturedProperties()
     {
-        $sql = 'SELECT * from property';
+        $sql = 'SELECT * from property WHERE is_featured = 1';
         $stmt = $this->connect();
 
         $property = $stmt->query($sql);

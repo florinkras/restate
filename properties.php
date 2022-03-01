@@ -95,6 +95,8 @@ session_start();
 
   <!--Cards-->
   <section class="properties py-1">
+
+
     <div class="container">
       <div class="card-text text-center py-1">
         <p class="lead text-primary">Properties</p>
@@ -104,90 +106,30 @@ session_start();
         </p>
       </div>
       <div class="grid grid-3">
-        <a class="card" href="property.php">
-          <img src="images/properties/house-1.jpg" alt="" />
-          <p class="text-right">$100.000</p>
+        <?php
+        include "./classes/db.classes.php";
+        include "./classes/property.classes.php";
+
+        $propertyModel = new Property();
+        $result = $propertyModel->getAllProperties();
+
+        foreach ($result as $row) {
+          echo '<a href="property.php?id=' . $row['ID'] . '" class="card">
+          <img src="data:image/png;base64,' . base64_encode($row['image']) . '" alt="" />
+          <p class="text-right">$' . $row['price'] . '</p>
           <div class="flex justify-space-between align-items-center">
             <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>London, UK</h6>
+              <h4>' . $row['title'] . '</h4>
+              <h6>' . $row['location'] . '</h6>
             </div>
             <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
+              <p><i class="fas fa-bed"></i> ' . $row['bedroomsCount'] . '</p>
+              <p><i class="fas fa-sink"></i> ' . $row['bathroomsCount'] . '</p>
             </div>
           </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-2.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>Toronto, CA</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-3.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>London, UK</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-4.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>New York, US</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-5.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>London, UK</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
-        <a href="property.php" class="card">
-          <img src="images/properties/house-6.jpg" alt="" />
-          <p class="text-right">$100.000</p>
-          <div class="flex justify-space-between align-items-center">
-            <div class="card-title">
-              <h4>The Palace</h4>
-              <h6>London, UK</h6>
-            </div>
-            <div class="card-icons flex">
-              <p><i class="fas fa-bed"></i> 5</p>
-              <p><i class="fas fa-sink"></i> 2</p>
-            </div>
-          </div>
-        </a>
+        </a>';
+        }
+        ?>
       </div>
     </div>
   </section>
