@@ -3,7 +3,7 @@
 class Property extends Db
 
 {
-    public function setProperty($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image, $created_by)
+    public function createPropertyHandler($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image, $created_by)
     {
         $sql = 'INSERT INTO property (title, location, description, price, bathroomsCount, bedroomsCount, image, created_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?);';
         $stmt = $this->connect()->prepare($sql);
@@ -13,6 +13,25 @@ class Property extends Db
             header("location: ../index.php?error=stmtfailed");
         }
 
+        $stmt = null;
+    }
+
+    public function updatePropertyHandler($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $created_by, $id)
+    {
+        $sql = 'UPDATE property SET 
+            title="' . $title .
+            '", location="' . $location .
+            '", description="' . $description .
+            '", price=' . $price .
+            ', bathroomsCount=' . $bathroomsCount .
+            ', bedroomsCount=' . $bedroomsCount .
+            ' WHERE ID=' . $id .
+            ' AND created_by=' . $created_by . ';';
+
+
+        $stmt = $this->connect();
+
+        $stmt->query($sql);
         $stmt = null;
     }
 

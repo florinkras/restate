@@ -26,6 +26,7 @@ if (!$result) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="stylesheet" href="./css/utilities.css" />
+  <link rel="stylesheet" href="./css/form.css" />
   <link rel="stylesheet" href="./css/media-queries.css" />
   <link rel="stylesheet" href="./css/carousel.css" />
   <title>REstate</title>
@@ -123,7 +124,7 @@ if (!$result) {
   ?>
 
   <!--Contact to buy form-->
-  <section class="buy-form">
+  <section class="buy-form my-2">
     <div class="container">
       <p class="lead text-primary">Contact the seller</p>
       <form action="#">
@@ -142,6 +143,41 @@ if (!$result) {
       </form>
     </div>
   </section>
+
+  <?php
+  if ($_SESSION && $_SESSION['role'] && $_SESSION['id'] == $result['created_by']) {
+    echo '<div class="container flex flex-column align-center card my-2 form-container">
+      <div class="flex justify-center align-center bg-primary p-2 lock-icon">
+          <i class="fas fa-lock"></i>
+      </div>
+      <h2>Update Property</h2>
+      <form name="updateProperty" action="includes/property.inc.php" method="post" id="property" enctype="multipart/form-data" class="flex flex-column align-center login-form">
+      <label class="full-width" for="id">Id</label>
+          <input id="propId" name="propId" class="bg-light" type="text" value=' . $result['ID'] . ' readonly />
+          <input id="oldImage" name="oldImage" class="bg-light" type="hidden" value="' . base64_encode($result['image']) . '" readonly />
+          <label class="full-width my-2" for="title">Title</label>
+          <input id="title" name="title" value="' . $result['title'] . '" class="bg-light" type="text" placeholder="title*" />
+          <label style="margin-top:1.5rem" class="full-width" for="location">Location</label>
+          <input id="location" name="location" name="location" value="' . $result['location'] . '" class="my-1 bg-light" type="text" placeholder="location*" />
+          <label class="full-width" for="description">Description</label>
+          <textarea id="description" name="description" name="description" class="my-1 bg-light" type="text" placeholder="description*">' . $result['description'] . '</textarea>
+          <label class="full-width" for="price">Price</label>
+          <input id="price" name="price" class="my-1 bg-light" name="price" value="' . $result['price'] . '" type="number" placeholder="price*" />
+          <label class="full-width" for="bedroomsCount">Bedrooms Count</label>
+          <input id="bedroomsCount" name="bedroomsCount" name="bedroomsCount" value="' . $result['bedroomsCount'] . '" class="my-1 bg-light" type="number" placeholder="bedrooms count*" />
+          <label class="full-width" for="bathroomsCount">Bathrooms Count</label>
+          <input id="bathroomsCount" name="bathroomsCount" name="bathroomsCount" value="' . $result['bathroomsCount'] . '" class="my-1 bg-light" type="number" placeholder="bathrooms count*" />
+          <div>
+            <h4>Current image preview</h4>
+            <img src="data:image/png;base64,' . base64_encode($result['image']) . '" alt="" />
+          </div>
+          <label class="full-width" for="image">Image</label>
+          <input id="image" name="image" class="my-1 bg-light" type="file" accept="image/png, image/gif, image/jpeg" placeholder="image*" />
+          <button class="btn" type="submit" name="updateProperty">Save changes</button>
+      </form>
+  </div>';
+  }
+  ?>
 
   <!--Footer-->
   <footer class="footer bg-primary">

@@ -31,7 +31,17 @@ class PropertyController extends Property
             exit();
         }
 
-        $this->setProperty($this->title, $this->location, $this->description, $this->price,  $this->bathroomsCount, $this->bedroomsCount, $this->image, $this->created_by);
+        $this->createPropertyHandler($this->title, $this->location, $this->description, $this->price,  $this->bathroomsCount, $this->bedroomsCount, $this->image, $this->created_by);
+    }
+
+    public function updateProperty($id)
+    {
+        if ($this->emptyInput() == false) {
+            header("location: ../index.php?error=emptyInput");
+            exit();
+        }
+
+        $this->updatePropertyHandler($this->title, $this->location, $this->description, $this->price,  $this->bathroomsCount, $this->bedroomsCount, $this->created_by, $id);
     }
 
     private function emptyInput()

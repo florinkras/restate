@@ -6,23 +6,35 @@ if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
     return exit();
 }
 
-if (isset($_POST["createProperty"])) {
+if (isset($_POST)) {
+    $id = $_POST["propId"];
     $title = $_POST["title"];
     $location = $_POST["location"];
     $description = $_POST["description"];
     $price = $_POST["price"];
     $bathroomsCount = $_POST["bathroomsCount"];
     $bedroomsCount = $_POST["bedroomsCount"];
-    $image = file_get_contents($_FILES['image']['tmp_name']);
+    $image = "";
+
+    if ($_FILES['image']['tmp_name']) {
+        $image = file_get_contents($_FILES['image']['tmp_name']);
+    } else {
+        $image = base64_encode($_POST['oldImage']);
+    }
 
     include "../classes/db.classes.php";
     include "../classes/property.classes.php";
     include "../classes/property-controller.classes.php";
 
+    $propertyController = new PropertyController($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image, $_SESSION['id']);
 
-    $login = new PropertyController($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image, $_SESSION['id']);
+    if (isset($_POST["createProperty"])) {
+        $propertyController->createProperty();
+    }
 
-    $login->createProperty();
+    if (isset($_POST["updateProperty"])) {
+        $propertyController->updateProperty($id);
+    }
 
     header("location: ../index.php?error=none");
 }
