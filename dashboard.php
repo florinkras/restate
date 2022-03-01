@@ -77,13 +77,16 @@ if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
         </div>
     </div>
 
-    <!--Showcase-->
+    <div class="container flex flex-column align-center my-2 form-container">
+        <h1>Dashboard</h1>
+    </div>
+
     <div class="container flex flex-column align-center card my-2 form-container">
         <div class="flex justify-center align-center bg-primary p-2 lock-icon">
             <i class="fas fa-lock"></i>
         </div>
         <h2>Create Admin</h2>
-        <form name="createAdmin" action="includes/signup.inc.php" method="post" id="signup" class="flex flex-column align-center login-form">
+        <form name="createAdmin" action="includes/signup.inc.php" method="post" id="createAdmin" class="flex flex-column align-center login-form">
             <input id="firstName" name="firstName" class="bg-light" type="text" placeholder="first name*" />
             <input id="lastName" name="lastName" class="my-1 bg-light" type="text" placeholder="last name*" />
             <input id="email" name="email" class="my-1 bg-light" type="email" placeholder="email*" />
@@ -93,6 +96,22 @@ if (!$_SESSION || !$_SESSION['id'] || !$_SESSION['role']) {
         </form>
     </div>
 
+    <div class="container flex flex-column align-center card my-2 form-container">
+        <div class="flex justify-center align-center bg-primary p-2 lock-icon">
+            <i class="fas fa-lock"></i>
+        </div>
+        <h2>Create Property</h2>
+        <form name="createProperty" action="includes/property.inc.php" method="post" id="property" enctype="multipart/form-data" class="flex flex-column align-center login-form">
+            <input id="title" name="title" class="bg-light" type="text" placeholder="title*" />
+            <input id="location" name="location" class="my-1 bg-light" type="text" placeholder="location*" />
+            <textarea id="description" name="description" class="my-1 bg-light" type="text" placeholder="description*"></textarea>
+            <input id="price" name="price" class="my-1 bg-light" type="number" placeholder="price*" />
+            <input id="bedroomsCount" name="bedroomsCount" class="my-1 bg-light" type="number" placeholder="bedrooms count*" />
+            <input id="bathroomsCount" name="bathroomsCount" class="my-1 bg-light" type="number" placeholder="bathrooms count*" />
+            <input id="image" name="image" class="my-1 bg-light" type="file" accept="image/png, image/gif, image/jpeg" placeholder="image*" />
+            <button class="btn" type="submit" name="createProperty">Create Property</button>
+        </form>
+    </div>
 
     <!--Footer-->
     <footer class="footer bg-primary">

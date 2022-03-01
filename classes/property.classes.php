@@ -1,7 +1,20 @@
 <?php
 
 class Property extends Db
+
 {
+    public function setProperty($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image)
+    {
+        $sql = 'INSERT INTO property (title, location, description, price, bathroomsCount, bedroomsCount, image) VALUES (?, ?, ?, ?, ?, ?, ?);';
+        $stmt = $this->connect()->prepare($sql);
+
+        if (!$stmt->execute(array($title, $location, $description, $price, $bathroomsCount, $bedroomsCount, $image))) {
+            $stmt = null;
+            header("location: ../index.php?error=stmtfailed");
+        }
+
+        $stmt = null;
+    }
 
     public function getAllProperties()
     {
