@@ -8,7 +8,10 @@ let mobileMenu = document.querySelector(".mobile-nav");
 
 let year = new Date().getFullYear();
 let footerCopyright = document.querySelector(".copyright-year");
-footerCopyright.innerHTML = `All rights reserved &copy; restate ${year}`;
+
+if (footerCopyright) {
+  footerCopyright.innerHTML = `All rights reserved &copy; restate ${year}`;
+}
 
 const form = document.querySelectorAll("form");
 
@@ -93,9 +96,8 @@ if (form) {
         return;
       }
 
-      item.submit();
-
       item.removeChild(document.querySelector("#error-container"));
+      item.submit();
     });
   });
 }

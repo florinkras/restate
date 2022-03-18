@@ -221,3 +221,7 @@ img {
     ),
     url("../images/filter.jpeg") no-repeat center center/cover;
 }
+
+#contactSeller {
+  width: 100%;
+}
