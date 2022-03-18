@@ -36,5 +36,9 @@ if (isset($_POST)) {
         $propertyController->updateProperty($id);
     }
 
+    if (isset($_POST["deleteProperty"])) {
+        $propertyController->deleteProperty($id);
+    }
+
     header("location: ../index.php?error=none");
 }

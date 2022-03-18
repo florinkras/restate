@@ -170,13 +170,8 @@ if (!$result) {
           <input id="bedroomsCount" name="bedroomsCount" name="bedroomsCount" value="' . $result['bedroomsCount'] . '" class="my-1 bg-light" type="number" placeholder="bedrooms count*" />
           <label class="full-width" for="bathroomsCount">Bathrooms Count</label>
           <input id="bathroomsCount" name="bathroomsCount" name="bathroomsCount" value="' . $result['bathroomsCount'] . '" class="my-1 bg-light" type="number" placeholder="bathrooms count*" />
-          <div>
-            <h4>Current image preview</h4>
-            <img src="data:image/png;base64,' . base64_encode($result['image']) . '" alt="" />
-          </div>
-          <label class="full-width" for="image">Image</label>
-          <input id="image" name="image" class="my-1 bg-light" type="file" accept="image/png, image/gif, image/jpeg" placeholder="image*" />
-          <button class="btn" type="submit" name="updateProperty">Save changes</button>
+          <button class="btn my-2" type="submit" name="updateProperty">Save changes</button>
+          <button class="btn" style="background-color:crimson;" name="deleteProperty">Delete</button>
       </form>
   </div>';
   }

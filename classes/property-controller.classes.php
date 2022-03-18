@@ -44,6 +44,11 @@ class PropertyController extends Property
         $this->updatePropertyHandler($this->title, $this->location, $this->description, $this->price,  $this->bathroomsCount, $this->bedroomsCount, $this->created_by, $id);
     }
 
+    public function deleteProperty($id)
+    {
+        $this->deletePropertyHandler($id);
+    }
+
     private function emptyInput()
     {
         $result = false;

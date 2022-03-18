@@ -35,6 +35,17 @@ class Property extends Db
         $stmt = null;
     }
 
+    public function deletePropertyHandler($id)
+    {
+        $sql = 'DELETE FROM property WHERE id = ' . $id;
+
+
+        $stmt = $this->connect();
+
+        $stmt->query($sql);
+        $stmt = null;
+    }
+
     public function getAllProperties()
     {
         $sql = 'SELECT * from property';
@@ -59,7 +70,7 @@ class Property extends Db
 
     public function getFeaturedProperties()
     {
-        $sql = 'SELECT * from property WHERE is_featured = 1';
+        $sql = 'SELECT * from property WHERE isFeatured = "1"';
         $stmt = $this->connect();
 
         $property = $stmt->query($sql);
